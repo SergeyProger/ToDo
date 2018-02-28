@@ -2,10 +2,6 @@ class ProjectsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
-  # GET /projects/new
-  def new
-    @project = Project.new
-  end
 
   # GET /projects/1/edit
   def edit
@@ -14,13 +10,17 @@ class ProjectsController < ApplicationController
   # POST /projects
   def create
     @project = Project.new(project_params)
-
-    if @project.save
-      redirect_to tasks_path, notice: 'Project was successfully created.'
-    else
-      render :new
+    respond_to do |format|
+      if @project.save
+        format.html { redirect_to tasks_path , notice: 'Project was successfully created.' }
+        format.js
+        format.json { render json: tasks_path, status: :created, location: tasks_path }
+      else
+        format.html { redirect_to tasks_path , notice: 'Project not add' }
+        format.json { render json: @project.errors, status: :unprocessable_entity }
+      end
     end
-  end
+    end
 
   # PATCH/PUT /projects/1
   def update

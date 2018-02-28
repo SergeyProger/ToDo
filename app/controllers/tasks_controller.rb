@@ -7,14 +7,14 @@ class TasksController < ApplicationController
     @tasks = Task.tasks_today
     @tasks_old = Task.tasks_old
     priority_new
+    @next_tasks = Task.next_seven_day
     @completed_tasks = Task.where(completed: true).order('updated_at')
     @projects = Project.all
+    @project = Project.new
+    @task = Task.new
+
   end
 
-  # GET /tasks/new
-  def new
-    @task = Task.new
-  end
 
   # GET /tasks/1/edit
   def edit
@@ -23,10 +23,15 @@ class TasksController < ApplicationController
   # POST /tasks
   def create
     @task = Task.new(task_params)
-    if @task.save
-      redirect_to tasks_path, notice: 'Task was successfully created.'
-    else
-      render :new
+    respond_to do |format|
+      if @task.save
+        format.html { redirect_to tasks_path , notice: 'Task was successfully created.' }
+        format.js
+        format.json { render json: tasks_path, status: :created, location: tasks_path }
+      else
+        format.html { redirect_to tasks_path , notice: 'Task not add' }
+        format.json { render json: @tasks.errors, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -44,6 +49,7 @@ class TasksController < ApplicationController
     @task.complete!
     redirect_to tasks_path
   end
+
 
   # DELETE /tasks/1
   def destroy

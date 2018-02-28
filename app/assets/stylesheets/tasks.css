@@ -3,18 +3,23 @@
   They will automatically be included in application.css.
 */
 
-td{
-    width: 500px;
-}
-.standart {
-  display: inline;
-}
-.complited_task {
-    display: none;
-}
-.jmi {
-   margin-right: 400px;
-}
+td{width: 500px;}
+
+.standart {display: inline;}
+
+.complited_task {display: none;}
+
+.next-day-seven {display: none;}
+
+.project_task {display: none;}
+
+.pro-form {display: none;}
+.ta-form {display: none;}
+
+.click-btn{ color: #29c5e6}
+.click-btn-task{ color: #730E15}
+
+.jmi {margin-right: 400px;}
 
 .colorpro_1{color: red}
 .colorpro_2{color: orange}
@@ -23,8 +28,11 @@ td{
 .colorpro_5{color: blue}
 .colorpro_6{color: purple}
 .colorpro_7{color: pink}
+
 .priority_3 {color: #B00100}
 .priority_2 {color: darkorange}
 .priority_1 {color: gray}
-.comlete_true {color: chartreuse; text-decoration: line-through}
-.
+
+.complete_true {color: chartreuse; text-decoration: line-through}
+.done { margin-left: 10px}
+.complete_true .done{ display: none; }

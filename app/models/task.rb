@@ -30,4 +30,12 @@ class Task < ApplicationRecord
     @tasks = @tasks.where('time_done < datetime()')
     @tasks
   end
+
+  def self.next_seven_day
+    @tasks = Task.all
+    @tasks = @tasks.where(completed: false)
+    @tasks = @tasks.where(time_done: DateTime.now..(DateTime.now + 7.day)).order('priority DESC')
+    @tasks
+  end
+
 end

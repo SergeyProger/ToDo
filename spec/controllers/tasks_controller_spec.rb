@@ -53,14 +53,8 @@ RSpec.describe TasksController, type: :controller do
       get :index, params: {}, session: valid_session
       expect(response).to be_success
     end
-  end
-
-
-  describe "GET #new" do
-    it "returns a success response" do
-      get :new, params: {}, session: valid_session
-      expect(response).to be_success
-    end
+    it "add project"
+    it "add task"
   end
 
   describe "GET #edit" do
@@ -86,7 +80,7 @@ RSpec.describe TasksController, type: :controller do
     end
 
     context "with invalid params" do
-      it "returns a success response (i.e. to display the 'new' template)" do
+      it "returns a success response " do
         post :create, params: {task: invalid_attributes}, session: valid_session
         expect(response).to be_success
       end
