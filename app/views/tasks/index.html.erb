@@ -41,7 +41,7 @@
             <hr>
         <% end %>
       </div>
-      <div class = "complited">
+      <div class = "complited_task">
        <%= @completed_tasks.each do |task| %>
         <%= render partial: 'task', object: task %>
         <hr>
@@ -50,10 +50,4 @@
       <%= link_to 'New Task', new_task_path ,class: 'btn btn-primary' %>
     </section>
     <footer>.</footer>
-<script>
-    $("h2").click(function(){
-    $(".standart").css("display", "none");
-    $(".complited").css("display", "block;");
-     });
-</script>
 </div>

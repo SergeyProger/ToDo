@@ -7,10 +7,10 @@ td{
     width: 500px;
 }
 .standart {
-
+  display: inline;
 }
-.complited {
-  display: none;
+.complited_task {
+    display: none;
 }
 .jmi {
    margin-right: 400px;
@@ -27,3 +27,4 @@ td{
 .priority_2 {color: darkorange}
 .priority_1 {color: gray}
 .comlete_true {color: chartreuse; text-decoration: line-through}
+.

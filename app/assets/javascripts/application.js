@@ -12,4 +12,17 @@
 //= require jquery
 //= require rails-ujs
 //= require twitter/bootstrap
-//= require_tree .
+
+
+jQuery(function(){
+    $("h2").click(function(){
+        if ( $(".standart").css('display') == 'none' ){
+            $(".complited_task").css("display", "none");
+            $(".standart").css("display", "inline");
+        }
+        else{
+        $(".complited_task").css("display", "inline");
+        $(".standart").css("display", "none");
+       }
+    });
+});
