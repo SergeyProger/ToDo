@@ -2,6 +2,7 @@
   <%= simple_form_for(@project) do |f| %>
       <%= f.error_notification %>
       <p>  <%= f.input :name %></p>
+      <p>  <%= f.select :colorpro, Project::COLORPROJECT.collect{|v,i| [v,i]} %></p>
       <p><%= f.button :submit %></p>
   <% end %>
 </div>

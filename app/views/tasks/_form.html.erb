@@ -1,12 +1,11 @@
-<div class ="col-md-6">
+
 <%= simple_form_for (@task) do |f| %>
       <%= f.error_notification %>
       <p>  <%= f.input :task_name %></p>
       <p> <%= f.select :priority, Task::PRIORITIETS %></p>
-      <%= f.label :time_done %>
+      <p>Срок выполнения</p>
       <p><%= f.datetime_select :time_done%></p>
       <p><%= f.input :completed%></p>
       <p><%= f.select :project_id, Project.all.collect { |p| [ p.name, p.id ] }, include_blank: false %></p>
       <p><%= f.button :submit %></p>
 <% end %>
-  </div>

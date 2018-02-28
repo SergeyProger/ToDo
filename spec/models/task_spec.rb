@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Task, type: :model do
-  describe 'Тест алидации' do
+
+  describe 'Тест валидации' do
 
     it "Название проэкта" do
       should validate_presence_of(:task_name)
@@ -16,4 +17,5 @@ RSpec.describe Task, type: :model do
   describe 'Тест связей' do
     it { should belong_to(:project) }
   end
+
 end

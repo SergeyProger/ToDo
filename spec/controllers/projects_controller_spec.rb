@@ -25,16 +25,17 @@ require 'rails_helper'
 
 RSpec.describe ProjectsController, type: :controller do
 
+  let(:user) {FactoryBot.create(:user)}
+
+  before(:each) do
+    sign_in(user)
+  end
   # This should return the minimal set of attributes required to create a valid
   # Project. As you add validations to Project, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
-  }
+  let(:valid_attributes) {FactoryBot.attributes_for(:project)}
 
-  let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
-  }
+  let(:invalid_attributes) {FactoryBot.attributes_for(:project, name: ' ')}
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -49,13 +50,6 @@ RSpec.describe ProjectsController, type: :controller do
     end
   end
 
-  describe "GET #show" do
-    it "returns a success response" do
-      project = Project.create! valid_attributes
-      get :show, params: {id: project.to_param}, session: valid_session
-      expect(response).to be_success
-    end
-  end
 
   describe "GET #new" do
     it "returns a success response" do
@@ -82,7 +76,7 @@ RSpec.describe ProjectsController, type: :controller do
 
       it "redirects to the created project" do
         post :create, params: {project: valid_attributes}, session: valid_session
-        expect(response).to redirect_to(Project.last)
+        expect(response).to redirect_to(tasks_path)
       end
     end
 
@@ -96,21 +90,20 @@ RSpec.describe ProjectsController, type: :controller do
 
   describe "PUT #update" do
     context "with valid params" do
-      let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
-      }
+      let(:new_attributes) {FactoryBot.attributes_for(:project, name: 'Кудяблики')}
 
       it "updates the requested project" do
         project = Project.create! valid_attributes
         put :update, params: {id: project.to_param, project: new_attributes}, session: valid_session
         project.reload
-        skip("Add assertions for updated state")
+        expect(Project.count).to eq(1)
+        expect(response).to redirect_to(tasks_path)
       end
 
       it "redirects to the project" do
         project = Project.create! valid_attributes
         put :update, params: {id: project.to_param, project: valid_attributes}, session: valid_session
-        expect(response).to redirect_to(project)
+        expect(response).to redirect_to(tasks_path)
       end
     end
 
@@ -134,7 +127,7 @@ RSpec.describe ProjectsController, type: :controller do
     it "redirects to the projects list" do
       project = Project.create! valid_attributes
       delete :destroy, params: {id: project.to_param}, session: valid_session
-      expect(response).to redirect_to(projects_url)
+      expect(response).to redirect_to(tasks_url)
     end
   end
 

@@ -1,6 +1,7 @@
 class Task < ApplicationRecord
   validates :task_name, presence: true, length: { maximum: 100 }
   validates_presence_of :priority
+  validates_presence_of :time_done
 
   belongs_to :project
 
@@ -9,5 +10,24 @@ class Task < ApplicationRecord
   def complete!
     self.completed = true
     save
+  end
+
+  def priority_now!
+    self.priority = 3
+    save
+  end
+
+  def self.tasks_today
+    @tasks = Task.all
+    @tasks = @tasks.where(completed: false)
+    @tasks = @tasks.where(time_done: DateTime.now..(DateTime.now + 1.day)).order('priority DESC')
+    @tasks
+  end
+
+  def self.tasks_old
+    @tasks = Task.all
+    @tasks = @tasks.where(completed: false)
+    @tasks = @tasks.where('time_done < datetime()')
+    @tasks
   end
 end

@@ -31,20 +31,29 @@ class ProjectsController < ApplicationController
     end
   end
 
-  def filter_task
-
-  end
-
   # DELETE /projects/1
   def destroy
+    if complite_task?
     @project.destroy
     redirect_to tasks_url, notice: 'Project was successfully destroyed.'
+    else
+      redirect_to tasks_url, notice: 'Остались не завершонные задачи.'
+    end
   end
 
+
   private
+
+    def complite_task?
+      current_tasks.each do |completed|
+        completed == false
+        return false
+      end
+     return true
+    end
     # Use callbacks to share common setup or constraints between actions.
     def current_tasks
-      @tasks = Task.find(project_id: @project.id)
+      @tasks = Task.where(project_id: @project.id)
     end
     def set_project
       @project = Project.find(params[:id])
@@ -52,6 +61,6 @@ class ProjectsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def project_params
-      params.require(:project).permit(:name)
+      params.require(:project).permit(:name, :colorpro)
     end
 end

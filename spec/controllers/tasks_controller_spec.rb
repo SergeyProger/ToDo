@@ -25,16 +25,22 @@ require 'rails_helper'
 
 RSpec.describe TasksController, type: :controller do
 
+  before(:each) {FactoryBot.create(:project)}
+
+  let(:user) {FactoryBot.create(:user)}
+
+  before(:each) do
+    sign_in(user)
+  end
+
+
   # This should return the minimal set of attributes required to create a valid
   # Task. As you add validations to Task, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
-  }
+  let(:valid_attributes) {FactoryBot.attributes_for(:task)}
 
-  let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
-  }
+  let(:invalid_attributes) {FactoryBot.attributes_for(:task, task_name: ' ')}
+
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -49,13 +55,6 @@ RSpec.describe TasksController, type: :controller do
     end
   end
 
-  describe "GET #show" do
-    it "returns a success response" do
-      task = Task.create! valid_attributes
-      get :show, params: {id: task.to_param}, session: valid_session
-      expect(response).to be_success
-    end
-  end
 
   describe "GET #new" do
     it "returns a success response" do
@@ -82,7 +81,7 @@ RSpec.describe TasksController, type: :controller do
 
       it "redirects to the created task" do
         post :create, params: {task: valid_attributes}, session: valid_session
-        expect(response).to redirect_to(Task.last)
+        expect(response).to redirect_to(tasks_path)
       end
     end
 
@@ -96,21 +95,20 @@ RSpec.describe TasksController, type: :controller do
 
   describe "PUT #update" do
     context "with valid params" do
-      let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
-      }
+      let(:new_attributes) {FactoryBot.attributes_for(:task, task_name: 'Кудяблики')}
 
       it "updates the requested task" do
         task = Task.create! valid_attributes
         put :update, params: {id: task.to_param, task: new_attributes}, session: valid_session
         task.reload
-        skip("Add assertions for updated state")
+        expect(Task.count).to eq(1)
+        expect(response).to redirect_to(tasks_path)
       end
 
       it "redirects to the task" do
         task = Task.create! valid_attributes
         put :update, params: {id: task.to_param, task: valid_attributes}, session: valid_session
-        expect(response).to redirect_to(task)
+        expect(response).to redirect_to(tasks_path)
       end
     end
 

@@ -1,41 +1,59 @@
 
-<div class="col-md-12">
   <div id="wrapper">
-    <header><h2>TODO</h2></header>
+    <header>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <% if user_signed_in? %>
+          <span>Здравствуйте, <%= current_user.email %></span>
+          <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %>
+      <% else %>
+          <%= link_to 'Войти', new_user_session_path %> или <%= link_to 'Зарегистрироваться', new_user_registration_path %>
+      <% end %>
+
+      <h2>TODO   <span class="jmi fa fa-check-circle-o "></span></h2>
+    </header>
     <aside>
-      <div class="col-md-12">
+
         <h1>Projects</h1>
-        <%= link_to 'New Project', new_project_path, class: 'btn btn-primary' %>
 
         <div class="buffer-top">
-
             <% @projects.each do |project| %>
               <div class="hre">
-              <p>   <span class="title"><%= project.name %></span>
-                <%= link_to content_tag('span','', class: 'fa fa-pencil'), edit_project_path(project), class: 'action' %>
+              <p> <i class="fa fa-circle colorpro_<%= project.colorpro %>" aria-hidden="true"></i>  <span class="title"><%= project.name %></span>
+                <%= link_to content_tag('span','', class: 'fa fa-pencil '), edit_project_path(project), class: 'action' %>
                 <%= link_to content_tag('span','', class: 'fa fa-trash'),  project, method: :delete, data: { confirm: 'Are you sure?' }, class: 'action' %>
               </p>
               </div>
           <% end %>
-
+          <%= link_to 'New Project', new_project_path, class: 'btn btn-primary' %>
         </div>
-      </div>
     </aside>
     <section>
       <h1>Today <%= Date.current.strftime("%d,%m")%></h1>
-      <%= link_to 'New Task', new_task_path, class: 'btn btn-primary' %>
-
+      <div class = "standart">
       <% @tasks_old.each do |task| %>
-       <%= render partial: 'task', object: task %>
+         <%= render partial: 'task', object: task %>
           <hr>
       <% end %>
 
       <% @tasks.each do |task| %>
-            <%= render partial: 'task', object: task %>
+          <%= render partial: 'task', object: task %>
             <hr>
         <% end %>
-
+      </div>
+      <div class = "complited">
+       <%= @completed_tasks.each do |task| %>
+        <%= render partial: 'task', object: task %>
+        <hr>
+        <% end %>
+      </div>
+      <%= link_to 'New Task', new_task_path ,class: 'btn btn-primary' %>
     </section>
     <footer>.</footer>
-  </div>
+<script>
+    $("h2").click(function(){
+    $(".standart").css("display", "none");
+    $(".complited").css("display", "block;");
+     });
+</script>
 </div>

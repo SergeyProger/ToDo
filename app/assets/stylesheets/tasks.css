@@ -2,3 +2,28 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+
+td{
+    width: 500px;
+}
+.standart {
+
+}
+.complited {
+  display: none;
+}
+.jmi {
+   margin-right: 400px;
+}
+
+.colorpro_1{color: red}
+.colorpro_2{color: orange}
+.colorpro_3{color: yellow}
+.colorpro_4{color: green}
+.colorpro_5{color: blue}
+.colorpro_6{color: purple}
+.colorpro_7{color: pink}
+.priority_3 {color: #B00100}
+.priority_2 {color: darkorange}
+.priority_1 {color: gray}
+.comlete_true {color: chartreuse; text-decoration: line-through}
