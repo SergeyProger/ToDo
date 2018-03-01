@@ -2,7 +2,7 @@
 
     <table class="hre">
       <% @project = Project.find(task.project_id) %>
-     <tr>
+     <tr data-task_id="<%= task.id %>">
        <td class='task'>
        <i class="fa fa-square priority_<%= task.priority %> complete_<%= task.completed %>" aria-hidden="true"></i>
          <%= task.task_name %></td>
@@ -10,10 +10,11 @@
          <td class = 'text-right'>
           <i class='task colorpro_<%= @project.colorpro %> complete_<%= task.completed %>' >
         <i class="fa fa-circle" aria-hidden="true"></i></i>
-      <%= link_to content_tag('span','', class: 'fa fa-check-square-o'), complete_task_path(task), data: {method: :put}, class: 'done action' %>
+           <a class='complitedAction fa fa-check-square-o done action' ></a>
       <%= link_to content_tag('span','', class: 'fa fa-pencil'), edit_task_path(task), class: 'action' %>
-      <%= link_to content_tag('span','', class: 'fa fa-trash'),  task, method: :delete, data: { confirm: 'Are you sure?' }, class: 'action' %>
+           <a class='deleteAction fa fa-trash action '></a>
        </td>
+       <hr>
      </tr>
     </table>
 

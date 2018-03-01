@@ -13,6 +13,7 @@
       <h2>TODO   <a class="jmi fa fa-check-circle-o "></a></h2>
     </header>
     <aside>
+
          <h3 class="next-seven-day"> Next 7 days </h3>
 
         <h1>Projects</h1>
@@ -33,43 +34,41 @@
           <a class = 'btn btn-primary click-btn'>Add project</a>
         </span>
     </aside>
+
     <section>
+
       <h1>Today <%= Date.current.strftime("%d,%m")%></h1>
 
       <div class = "standart">
       <% @tasks_old.each do |task| %>
          <%= render partial: 'task', object: task %>
-          <hr>
       <% end %>
 
       <% @tasks.each do |task| %>
           <%= render partial: 'task', object: task %>
-            <hr>
         <% end %>
       </div>
 
       <div class = "complited_task">
        <%= @completed_tasks.each do |task| %>
         <%= render partial: 'task', object: task %>
-        <hr>
         <% end %>
       </div>
 
       <div class = "project_task">
         <%= @project.tasks.each do |task| %>
             <%= render partial: 'task', object: task %>
-            <hr>
         <% end %>
       </div>
 
       <div class = "next-day-seven">
         <%= @next_tasks.each do |task| %>
             <%= render partial: 'task', object: task %>
-            <hr>
         <% end %>
       </div>
      <div class = "ta-form" ><%= render 'form', task: @task %></div>
       <a  class = 'btn btn-primary click-btn-task '>Add Task</a>
     </section>
+
     <footer>.</footer>
 </div>
