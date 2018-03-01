@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
   before_action :authenticate_user!
   before_action :set_task, only: [:show, :edit, :update, :destroy]
-
+  skip_before_action :verify_authenticity_token, only: [:destroy]
   # GET /tasks
   def index
     @tasks = Task.tasks_today
@@ -53,8 +53,11 @@ class TasksController < ApplicationController
 
   # DELETE /tasks/1
   def destroy
-    @task.destroy
-    redirect_to tasks_url, notice: 'Task was successfully destroyed.'
+    if @task.destroy
+      redirect_to tasks_path, notice: 'Пользователь удалён.'
+    else
+    render json: {success: true}
+    end
   end
 
 
