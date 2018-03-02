@@ -1,7 +1,9 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 
+
 jQuery(function(){
+
     //удаление задачи
     $(".deleteAction").click(function(){
         var current_task_tr = $(this).parents('tr')[0];
@@ -33,43 +35,48 @@ jQuery(function(){
 
     });
 
-
+    //управление отображением окна
+    function windowOpen(name) {
+        var windowArray = new Array(".standart", ".complited_task", ".next-day-seven", ".project_task");
+        var counterWindow;
+        for (counterWindow = 0; counterWindow <= windowArray.length; counterWindow++) {
+            $(windowArray[counterWindow]).css("display", "none");
+            if (windowArray[counterWindow] == name) {
+                $(windowArray[counterWindow]).css("display", "inline");
+            }
+        }
+    }
+    
     //функция переключает между текущими задачами и выполнеными
     $(".jmi").click(function(){
         if ( $(".standart").css('display') == 'none' ){
-            $(".complited_task").css("display", "none");
-            $(".standart").css("display", "inline");
+            windowOpen(".standart");
         }
         else{
-            $(".complited_task").css("display", "inline");
-            $(".done").css("display", "none");
-            $(".standart").css("display", "none");
+            windowOpen(".complited_task");
         }
     });
     //функция переключает между текущими задачами и 7 дней вперёд
     $(".next-seven-day").click(function(){
         if ( $(".standart").css('display') == 'none' ){
-            $(".next-day-seven").css("display", "none");
-            $(".standart").css("display", "inline");
+            windowOpen(".standart");
             $(".next-seven-day").text(" Next 7 days")
         }
         else{
-            $(".next-day-seven").css("display", "inline");
-            $(".standart").css("display", "none");
+            windowOpen(".next-day-seven");
             $(".next-seven-day").text("Current task")
         }
     });
     //при клике на проект
     $(".title").click(function(){
         if ( $(".standart").css('display') == 'none' ){
-            $(".project_task").css("display", "none");
-            $(".standart").css("display", "inline");
+            windowOpen(".standart");
         }
         else{
-            $(".project_task").css("display", "inline");
-            $(".standart").css("display", "none");
+            windowOpen(".project_task");
         }
     });
+
     //форма создания проекта
     $(".click-btn").click(function() {
         if ($(".pro-form").css('display') == 'none') {
