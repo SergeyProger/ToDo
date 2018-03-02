@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="303ff101-9eee-44ea-91e7-d5b3fc85ad76" name="Default" comment="">
+<<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/tasks.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/tasks.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tasks/index.html.erb" afterPath="$PROJECT_DIR$/app/views/tasks/index.html.erb" />
+=======
+>>>>>>> 74378fae43cbb0408fa0fcc18d778b48c5a2bb7e
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/features/support/env.rb" afterPath="$PROJECT_DIR$/features/support/env.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/templates/erb/scaffold/_form.html.erb" afterPath="$PROJECT_DIR$/lib/templates/erb/scaffold/_form.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/script/cucumber" afterPath="$PROJECT_DIR$/script/cucumber" />
@@ -29,6 +32,7 @@
     <SUITE FILE_PATH="coverage/ToDo@ProjectsController__ToDo.coverage" NAME="ProjectsController: ToDo Coverage Results" MODIFIED="1519248976448" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ToDo" />
   </component>
   <component name="FileEditorManager">
+<<<<<<< HEAD
     <splitter split-orientation="horizontal" split-proportion="0.66852194">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -42,11 +46,20 @@
               </provider>
             </entry>
           </file>
+=======
+    <splitter split-orientation="horizontal" split-proportion="0.647541">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+>>>>>>> 74378fae43cbb0408fa0fcc18d778b48c5a2bb7e
           <file leaf-file-name="_task.html.erb" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/tasks/_task.html.erb">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="324">
+<<<<<<< HEAD
                   <caret line="18" column="12" lean-forward="false" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
+=======
+                  <caret line="18" column="12" lean-forward="true" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
+>>>>>>> 74378fae43cbb0408fa0fcc18d778b48c5a2bb7e
                   <folding />
                 </state>
               </provider>
@@ -82,11 +95,18 @@
               </provider>
             </entry>
           </file>
+<<<<<<< HEAD
           <file leaf-file-name="cucumber" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/script/cucumber">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="180">
                   <caret line="10" column="3" lean-forward="false" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+=======
+          <file leaf-file-name="cucumber" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/script/cucumber">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="180">
+                  <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -96,17 +116,36 @@
             <entry file="file://$PROJECT_DIR$/features/support/env.rb">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="522">
-                  <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+                  <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+>>>>>>> 74378fae43cbb0408fa0fcc18d778b48c5a2bb7e
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
+<<<<<<< HEAD
+          <file leaf-file-name="env.rb" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/features/support/env.rb">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="522">
+                  <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+=======
           <file leaf-file-name="routes.rb" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/config/routes.rb">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="90">
                   <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+>>>>>>> 74378fae43cbb0408fa0fcc18d778b48c5a2bb7e
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_form.html.erb" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/lib/templates/erb/scaffold/_form.html.erb">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="252">
+                  <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -306,8 +345,11 @@
         <option value="$PROJECT_DIR$/features/support/env.rb" />
         <option value="$PROJECT_DIR$/lib/templates/erb/scaffold/_form.html.erb" />
         <option value="$PROJECT_DIR$/script/cucumber" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/app/views/tasks/index.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/tasks.js" />
+=======
+>>>>>>> 74378fae43cbb0408fa0fcc18d778b48c5a2bb7e
       </list>
     </option>
   </component>
@@ -453,6 +495,35 @@
             <path>
               <item name="ToDo" type="b2602c69:ProjectViewProjectNode" />
               <item name="ToDo" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
+=======
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ToDo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ToDo" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ToDo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ToDo" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="erb" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ToDo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ToDo" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="erb" type="462c0819:PsiDirectoryNode" />
+              <item name="scaffold" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ToDo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ToDo" type="462c0819:PsiDirectoryNode" />
+>>>>>>> 74378fae43cbb0408fa0fcc18d778b48c5a2bb7e
               <item name="script" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -798,8 +869,12 @@
       <workItem from="1519828063934" duration="6122000" />
       <workItem from="1519842094091" duration="2291000" />
       <workItem from="1519886910346" duration="2817000" />
+<<<<<<< HEAD
       <workItem from="1519919811087" duration="13338000" />
       <workItem from="1519975053619" duration="1764000" />
+=======
+      <workItem from="1519919811087" duration="9468000" />
+>>>>>>> 74378fae43cbb0408fa0fcc18d778b48c5a2bb7e
     </task>
     <servers />
   </component>
@@ -821,7 +896,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="172514000" />
+=======
+    <option name="totallyTimeSpent" value="166880000" />
+>>>>>>> 74378fae43cbb0408fa0fcc18d778b48c5a2bb7e
   </component>
   <component name="ToolWindowManager">
     <frame x="63" y="-4" width="1617" height="1054" extended-state="6" />
@@ -1196,6 +1275,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/views/tasks/_task.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -1204,6 +1284,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> 74378fae43cbb0408fa0fcc18d778b48c5a2bb7e
     <entry file="file://$PROJECT_DIR$/app/views/tasks/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="558">
@@ -1218,6 +1300,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="48" column="4" lean-forward="false" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tasks/_task.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="12" lean-forward="true" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/support/env.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/templates/erb/scaffold/_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/cucumber">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>

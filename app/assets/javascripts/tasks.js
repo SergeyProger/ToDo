@@ -46,7 +46,7 @@ jQuery(function(){
             }
         }
     }
-    
+
     //функция переключает между текущими задачами и выполнеными
     $(".jmi").click(function(){
         if ( $(".standart").css('display') == 'none' ){
