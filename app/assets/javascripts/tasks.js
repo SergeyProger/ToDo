@@ -24,7 +24,7 @@ jQuery(function(){
     $(".complitedAction").click(function(){
         var current_task_tr = $(this).parents('tr')[0];
         $.ajax({
-            url: '/tasks/' + $(current_task_tr).attr('data-task_id')+'/complete/',
+            url: '/tasks/' + $(current_task_tr).attr('#data-task_id')+'/complete/',
             type: 'post',
             data: {_method: 'PUT'},
              success: function (result) {
@@ -34,6 +34,7 @@ jQuery(function(){
         });
 
     });
+
 
     //управление отображением окна
     function windowOpen(name) {
@@ -49,33 +50,25 @@ jQuery(function(){
 
     //функция переключает между текущими задачами и выполнеными
     $(".jmi").click(function(){
-        if ( $(".standart").css('display') == 'none' ){
-            windowOpen(".standart");
+        if ( $(".complited_task").css('display') == 'none' ){
+            windowOpen(".complited_task");
         }
         else{
-            windowOpen(".complited_task");
+            windowOpen(".standart");
         }
     });
     //функция переключает между текущими задачами и 7 дней вперёд
     $(".next-seven-day").click(function(){
-        if ( $(".standart").css('display') == 'none' ){
-            windowOpen(".standart");
-            $(".next-seven-day").text(" Next 7 days")
-        }
-        else{
+        if ( $(".next-day-seven").css('display') == 'none' ){
             windowOpen(".next-day-seven");
-            $(".next-seven-day").text("Current task")
-        }
-    });
-    //при клике на проект
-    $(".title").click(function(){
-        if ( $(".standart").css('display') == 'none' ){
-            windowOpen(".standart");
+            $(".next-seven-day").text("Current task");
         }
         else{
-            windowOpen(".project_task");
+            windowOpen(".standart");
+            $(".next-seven-day").text(" Next 7 days");
         }
     });
+
 
     //форма создания проекта
     $(".click-btn").click(function() {
@@ -97,6 +90,15 @@ jQuery(function(){
         else{
             $(".ta-form").css("display", "none");
             $(".click-btn-task").text("Add task");
+        }
+    });
+    //при клике на проект
+    $(".title").click(function(){
+        if ( $(".project_task").css('display') == 'none' ) {
+            windowOpen(".project_task");
+        }
+        else{
+            windowOpen(".standart");
         }
     });
 });

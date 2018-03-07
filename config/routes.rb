@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   resources :projects
   resources :tasks do
     put :complete, on: :member
+    put :project_task, on: :member
   end
 end

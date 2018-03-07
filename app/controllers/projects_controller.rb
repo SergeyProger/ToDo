@@ -41,13 +41,13 @@ class ProjectsController < ApplicationController
     end
   end
 
-
   private
 
     def complite_task?
       current_tasks.each do |completed|
-        completed == false
+       if completed == false
         return false
+         end
       end
      return true
     end

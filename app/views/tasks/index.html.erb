@@ -22,7 +22,7 @@
             <% @projects.each do |project| %>
               <div class="hre">
               <p> <i class="fa fa-circle colorpro_<%= project.colorpro %>" aria-hidden="true"></i>
-                <a class='title' ><span data-project_id="<%= project.id %>"><%= project.name %></span></a>
+                <a class='title'> <p data-project_id="<%= project.id %>"><%= project.name %></a></p>
                 <%= link_to content_tag('span','', class: 'fa fa-pencil '), edit_project_path(project), class: 'action' %>
                 <%= link_to content_tag('span','', class: 'fa fa-trash'),  project, method: :delete, data: { confirm: 'Are you sure?' }, class: 'action' %>
               </p>
@@ -56,7 +56,7 @@
       </div>
 
       <div class = "project_task">
-        <%= @project.tasks.each do |task| %>
+        <%= @tasks.each do |task| %>
             <%= render partial: 'task', object: task %>
         <% end %>
       </div>
